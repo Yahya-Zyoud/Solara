@@ -1,0 +1,51 @@
+/* Merge into globals.css. Preserve existing Tailwind/shadcn imports and setup. */
+:root {
+  --solara-midnight: #0D211C;
+  --solara-solar: #F5C842;
+  --solara-eucalyptus: #3F715D;
+  --solara-sand: #F2EEE5;
+  --solara-paper: #FCFBF8;
+  --solara-border: #DCE0D7;
+  --solara-text-secondary: #647366;
+  --solara-text-on-dark-secondary: #BDCFC2;
+
+  /* Connect these to font variables supplied by your Next.js font setup. */
+  --solara-font-heading: var(--font-manrope, 'Manrope'), sans-serif;
+  --solara-font-body: var(--font-dm-sans, 'DM Sans'), sans-serif;
+  --solara-font-mono: ui-monospace, SFMono-Regular, Consolas, monospace;
+  --solara-space-1: 4px;
+  --solara-space-2: 8px;
+  --solara-space-3: 12px;
+  --solara-space-4: 16px;
+  --solara-space-6: 24px;
+  --solara-space-8: 32px;
+  --solara-space-12: 48px;
+  --solara-space-16: 64px;
+  --solara-space-24: 96px;
+  --solara-radius-control: 4px;
+  --solara-radius-panel: 8px;
+  --solara-content-max: 1440px;
+  --solara-motion-control: 160ms;
+  --solara-motion-panel: 220ms;
+  --solara-motion-scene: 650ms;
+  --solara-ease: cubic-bezier(.22, 1, .36, 1);
+
+  /* Suggested light-theme semantic mapping for shadcn. */
+  --background: var(--solara-paper);
+  --foreground: var(--solara-midnight);
+  --primary: var(--solara-solar);
+  --primary-foreground: var(--solara-midnight);
+  --secondary: var(--solara-sand);
+  --secondary-foreground: var(--solara-midnight);
+  --muted: var(--solara-sand);
+  --muted-foreground: var(--solara-text-secondary);
+  --card: var(--solara-paper);
+  --card-foreground: var(--solara-midnight);
+  --popover: var(--solara-paper);
+  --popover-foreground: var(--solara-midnight);
+  --border: var(--solara-border);
+  --input: var(--solara-border);
+  --ring: var(--solara-eucalyptus);
+}
+/* Existing dark-mode overrides, destructive colors and chart tokens require
+   an explicit design pass. This file does not define a complete dark theme. */
