@@ -1,36 +1,56 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Solara — V1 + Motion
 
-## Getting Started
+The original Solara V1 experience is integrated into the main Next.js application. Run this repository from its root; no separate prototype project is required.
 
-First, run the development server:
+## Run locally
 
-```bash
+Use Node.js 24 LTS and npm. After cloning or pulling the updated repository:
+
+```sh
+npm ci
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```sh
+npm run lint
+npm run build
+npm start
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Five experiences
 
-## Learn More
+- `/#home` — brand introduction, services and projects.
+- `/#calculator` — interactive system estimate and Three.js panel preview.
+- `/#catalog` — equipment filters, details and inquiry flow.
+- `/#service` — maintenance request and sample ticket tracking.
+- `/#dashboard` — demo leads, quotations, installations, products and tickets.
 
-To learn more about Next.js, take a look at the following resources:
+The original green, yellow and sand visual identity is preserved. Motion (Framer Motion) handles React transitions and feedback, with reduced-motion support.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Where to work
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- `src/app/page.tsx`: application entry point.
+- `src/app/layout.tsx`: global styles and page metadata.
+- `src/app/solara.css`: V1 design and responsive styles.
+- `src/components/solara/SolaraApp.jsx`: screens, forms and motion components.
+- `src/components/solara/SolaraClient.tsx`: browser-only loading boundary.
+- `src/components/solara/scene.js`: procedural Three.js hardware scene and cleanup.
+- `src/components/solara/data.js`: illustrative products and operational data.
+- `src/components/solara/home.js`: home-page content.
+- `public/solara`: local product illustrations and project image.
+- `docs/solara-team-handoff`: existing team materials, retained.
+- `src/components/ui`: existing shared UI library, retained.
 
-## Deploy on Vercel
+## Demo scope
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+This is an interactive frontend prototype. Requests, planner settings and workspace notes stay in the browser's local storage. No emails are sent and no production database or authentication is connected. Products, project figures and estimates are illustrative. The Three.js hardware is procedural geometry, not manufacturer CAD.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Navigation currently uses URL hashes. The experience loads on the client because the scene and demo storage use browser APIs. Production routing, backend integration, authentication and engineering validation of solar estimates are future team work.
+
+## Updating the existing GitHub repository
+
+Extract the update ZIP and upload its contents into the repository root with **Add file → Upload files**, preserving the `src` and `public` folder structure. Do not upload the ZIP itself or place the changes inside another folder. Commit the upload. Team members then pull the changes and run `npm ci`.
+
+The previously uploaded `solara-v1-react-source` directory is not needed to run the integrated app; it can remain as a reference. Never upload `node_modules`, `.next`, or private environment files.
